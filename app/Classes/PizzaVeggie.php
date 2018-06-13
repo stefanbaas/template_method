@@ -8,24 +8,22 @@ class PizzaVeggie extends Pizza
     private $veggiesUsed = ["Mushrooms", "Artichoke", "Onion", "Peppers", "Olives"];
     private $condimentsUsed = ["Tomato sauce", "Oil"];
 
+    public $customerWantsMeat = false;
 
-    function addMeat()
+    public function addMeat() {}
+
+    public function addCheese()
     {
-        // TODO: Implement addMeat() method.
+        return "Adding the cheese: ".implode(', ', $this->cheeseUsed);
     }
 
-    function addCheese()
+    public function addVegetables()
     {
-        // TODO: Implement addCheese() method.
+        return "Adding the vegetables: ".implode(', ', $this->veggiesUsed);
     }
 
-    function addVegetables()
+    public function addCondiments()
     {
-        // TODO: Implement addVegetables() method.
-    }
-
-    function addCondiments()
-    {
-        // TODO: Implement addCondiments() method.
+        return "Adding the condiments: ".implode(', ', $this->condimentsUsed);
     }
 }
