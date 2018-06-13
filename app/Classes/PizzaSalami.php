@@ -4,24 +4,26 @@ namespace App\Classes;
 
 class PizzaSalami extends Pizza
 {
+    private $meatUsed = ["Salami", "Pepperoni"];
+    private $cheeseUsed = ["Mozzarella"];
+    private $condimentsUsed = ["Tomato sauce", "Oil"];
+
+    public $customerWantsVegetables = false;
 
     function addMeat()
     {
-        // TODO: Implement addMeat() method.
+        return "Adding the Meat: ".implode(', ', $this->meatUsed);
     }
 
     function addCheese()
     {
-        // TODO: Implement addCheese() method.
+        return "Adding the cheese: ".implode(', ', $this->cheeseUsed);
     }
 
-    function addVegetables()
-    {
-        // TODO: Implement addVegetables() method.
-    }
+    function addVegetables() {}
 
     function addCondiments()
     {
-        // TODO: Implement addCondiments() method.
+        return "Adding the condiments: ".implode(', ', $this->condimentsUsed);
     }
 }
