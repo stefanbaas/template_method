@@ -61,4 +61,9 @@ class PizzaTest extends TestCase
     {
         $this->assertTrue(is_string($this->sut->addPizzaDough()));
     }
+
+    public function testWrapThePizza()
+    {
+        $this->assertTrue(is_string($this->sut->wrapThePizza()));
+    }
 }
