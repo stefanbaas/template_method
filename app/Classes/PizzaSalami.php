@@ -10,19 +10,19 @@ class PizzaSalami extends Pizza
 
     public $customerWantsVegetables = false;
 
-    function addMeat()
+    public function addMeat()
     {
         return "Adding the Meat: ".implode(', ', $this->meatUsed);
     }
 
-    function addCheese()
+    public function addCheese()
     {
         return "Adding the cheese: ".implode(', ', $this->cheeseUsed);
     }
 
-    function addVegetables() {}
+    public function addVegetables() {}
 
-    function addCondiments()
+    public function addCondiments()
     {
         return "Adding the condiments: ".implode(', ', $this->condimentsUsed);
     }
