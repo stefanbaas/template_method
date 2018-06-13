@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-class Pizza
+abstract class Pizza
 {
-
+    abstract function addMeat();
 }
