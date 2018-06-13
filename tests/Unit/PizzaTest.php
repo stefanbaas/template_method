@@ -86,4 +86,9 @@ class PizzaTest extends TestCase
     {
         $this->assertTrue($this->sut->customerWantsMeat);
     }
+
+    public function testMakePizza()
+    {
+        $this->assertTrue(is_array($this->sut->makePizza()));
+    }
 }

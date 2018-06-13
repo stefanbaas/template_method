@@ -19,11 +19,44 @@ abstract class Pizza
     // Public functions
     public function addPizzaDough()
     {
-        return "Added pizza dough\n";
+        return "Added pizza dough";
     }
 
     public function wrapThePizza()
     {
-        return "Wrap the pizza\n";
+        return "Wrap the pizza";
+    }
+
+    public function makePizza()
+    {
+        $aActions = [];
+
+        // Add pizza dough
+        $aActions[] = $this->addPizzaDough();
+
+        // Add meat
+        if($this->customerWantsMeat){
+            $aActions[] = $this->addMeat();
+        }
+
+        // Add cheese
+        if($this->customerWantsCheese){
+            $aActions[] = $this->addCheese();
+        }
+
+        // Add vegetables
+        if($this->customerWantsVegetables){
+            $aActions[] = $this->addVegetables();
+        }
+
+        // Add condiments
+        if($this->customerWantsCondiments){
+            $aActions[] = $this->addCondiments();
+        }
+
+        // Wrap the pizza
+        $aActions[] = $this->wrapThePizza();
+
+        return $aActions;
     }
 }
