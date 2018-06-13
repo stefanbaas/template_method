@@ -29,4 +29,33 @@ class PizzaTest extends TestCase
 
         $this->assertTrue($this->sut->addMeat());
     }
+
+    public function testAddCheese()
+    {
+        $this->sut->expects($this->any())
+            ->method('addCheese')
+            ->will($this->returnValue(TRUE));
+
+        $this->assertTrue($this->sut->addCheese());
+    }
+
+    public function testAddVegetables()
+    {
+        $this->sut->expects($this->any())
+            ->method('addVegetables')
+            ->will($this->returnValue(TRUE));
+
+        $this->assertTrue($this->sut->addVegetables());
+    }
+
+    public function testAddCondiments()
+    {
+        $this->sut->expects($this->any())
+            ->method('addCondiments')
+            ->will($this->returnValue(TRUE));
+
+        $this->assertTrue($this->sut->addCondiments());
+    }
+
+
 }
