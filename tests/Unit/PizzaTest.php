@@ -57,5 +57,8 @@ class PizzaTest extends TestCase
         $this->assertTrue($this->sut->addCondiments());
     }
 
-
+    public function testAddPizzaDough()
+    {
+        $this->assertTrue(is_string($this->sut->addPizzaDough()));
+    }
 }
