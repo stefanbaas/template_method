@@ -4,26 +4,22 @@ namespace App\Classes;
 
 class PizzaVeggie extends Pizza
 {
-    private $cheeseUsed = ["Mozzarella"];
-    private $veggiesUsed = ["Mushrooms", "Artichoke", "Onion", "Peppers", "Olives"];
-    private $condimentsUsed = ["Tomato sauce", "Oil"];
-
-    public $customerWantsMeat = false;
-
-    public function addMeat() {}
-
-    public function addCheese()
-    {
-        return "Adding the cheese: ".implode(', ', $this->cheeseUsed);
+    public function getMeat() :array {
+        return [];
     }
 
-    public function addVegetables()
+    public function getCheese() :array
     {
-        return "Adding the vegetables: ".implode(', ', $this->veggiesUsed);
+        return ["Mozzarella"];
     }
 
-    public function addCondiments()
+    public function getVegetables() :array
     {
-        return "Adding the condiments: ".implode(', ', $this->condimentsUsed);
+        return ["Mushrooms", "Artichoke", "Onion", "Peppers", "Olives"];
+    }
+
+    public function getCondiments() :array
+    {
+        return ["Tomato sauce", "Oil"];
     }
 }

@@ -2,61 +2,61 @@
 
 namespace App\Classes;
 
-abstract class Pizza
-{
-    // hooks
-    public $customerWantsMeat = true;
-    public $customerWantsCheese = true;
-    public $customerWantsVegetables = true;
-    public $customerWantsCondiments = true;
+use App\Interfaces\PizzaInterface;
 
+abstract class Pizza implements PizzaInterface
+{
     // These methods must be overridden by the extending subclasses
-    abstract function addMeat();
-    abstract function addCheese();
-    abstract function addVegetables();
-    abstract function addCondiments();
+    abstract public function getMeat() :array;
+    abstract public function getCheese() :array;
+    abstract public function getVegetables() :array;
+    abstract public function getCondiments() :array;
 
     // Public functions
-    public function addPizzaDough()
+    public function getPizzaDough() :string
     {
         return "Added pizza dough";
     }
 
-    public function bakeThePizza()
+    public function bakeThePizza() :string
     {
         return "Bake the pizza";
     }
 
-    public function wrapThePizza()
+    public function wrapThePizza() :string
     {
         return "Wrap the pizza";
     }
 
-    public function makePizza()
+    final public function makePizza() :array
     {
         $aActions = [];
 
         // Add pizza dough
-        $aActions[] = $this->addPizzaDough();
+        $aActions[] = $this->getPizzaDough();
 
         // Add condiments
-        if($this->customerWantsCondiments){
-            $aActions[] = $this->addCondiments();
+        $aCondiments = $this->getCondiments();
+        if($aCondiments){
+            $aActions[] = "Adding the condiments: ".implode(', ',$aCondiments);
         }
 
         // Add meat
-        if($this->customerWantsMeat){
-            $aActions[] = $this->addMeat();
+        $aMeat = $this->getMeat();
+        if($aMeat){
+            $aActions[] = "Adding the meat: ".implode(', ',$aMeat);
         }
 
         // Add vegetables
-        if($this->customerWantsVegetables){
-            $aActions[] = $this->addVegetables();
+        $aVegetables = $this->getVegetables();
+        if($aVegetables){
+            $aActions[] = "Adding the vegetables: ".implode(', ',$aVegetables);
         }
 
         // Add cheese
-        if($this->customerWantsCheese){
-            $aActions[] = $this->addCheese();
+        $aCheese = $this->getCheese();
+        if($aCheese){
+            $aActions[] = "Adding the cheese: ".implode(', ',$aCheese);
         }
 
         // Wrap the pizza

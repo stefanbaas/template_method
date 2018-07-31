@@ -17,10 +17,13 @@ use App\Classes\PizzaVeggie;
 Route::get('/', function () {
 
     $pizzaSalami = new PizzaSalami();
-    var_dump($pizzaSalami->makePizza());
+    $aPizzaSalami = $pizzaSalami->makePizza();
 
     $pizzaVeggie = new PizzaVeggie();
-    var_dump($pizzaVeggie->makePizza());
+    $aPizzaVeggie = $pizzaVeggie->makePizza();
 
-    return view('welcome');
+    return view('welcome', [
+        'pizzaSalami' => $aPizzaSalami,
+        'pizzaVeggie' => $aPizzaVeggie
+    ]);
 });
